@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# This script kills guacd processes that runs longer than 12 hours in the system.
+# This script kills guacd processes that runs longer than 8 hours in the system.
 
 set -e
 set -x
 
-# Define the threshold time in seconds (12 hours)
-threshold=$((12 * 60 * 60))
+# Define the threshold time in seconds (8 hours)
+threshold=$((8 * 60 * 60))
 
 # Iterate through all processes
 while read -r pid elapsed_time comm; do
