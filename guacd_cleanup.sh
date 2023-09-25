@@ -19,6 +19,6 @@ while read -r pid elapsed_time comm; do
     echo "Killing process $pid (started $process_age seconds ago)"
     kill "$pid"
   fi
-done < <(ps -eo pid,etimes,command |grep guacd |grep -v grep |tail -n +2)
+done < <(ps -eo pid,etimes,command --sort=-etimes|grep guacd |grep -v grep |tail -n +2)
 
 echo "Process cleanup completed."
